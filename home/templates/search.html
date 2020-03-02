@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+ {% block content  %}
+ {% if Posts.count > 0  %}
+ {% for post in Posts %}
+  <div class="row mt-4">
+  <div class="col-sm-2"></div>
+    <div class="col-sm-7">
+      <a href="/trangchu/posts/{{post.id}}/"><img src="{{post.image}}" class="img-fluid"></a>
+      <a href="/trangchu/posts/{{post.id}}/">{{post.title}}</a>
+      <p class="m-5"></p>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  <p class="text-danger col-sm-12 mt-5" style="text-align:center; font-size:30px;">Không có kết quả nào phù hợp!</p>
+ {% endif %}
+
+ {% endblock  %}

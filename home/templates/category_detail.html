@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  {% for item in PostByCategoryId %}
+  <div class="col-sm-4">
+    <a href="/trangchu/posts/{{item.id}}/"><img src="{{item.image}}" class="img-fluid"></a>
+    <a href="/trangchu/posts/{{item.id}}/">{{item.title}}</a>
+    <p class="m-5"></p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Trang chủ{% endblock  %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
+
+
+{% block content %}
+<div class="row mt-4">
+  {% for post in Post %}
+  <div class="col-sm-4">
+    <a href="/trangchu/posts/{{post.id}}/"><img src="{{post.image}}" class="img-fluid"></a>
+    <a href="/trangchu/posts/{{post.id}}/">{{post.title}}</a>
+    <p class="m-5"></p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock  %}
